@@ -1,0 +1,31 @@
+name: Node CI
+
+on: 
+  push:
+    branches:
+      - master
+      - /^release-.*/
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [8, 10]
+        strategy:
+          fail-fast: true
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+        fetch-depth: 1
+    - name: npm uninstall, install
+      run: |
+        npm uninstall typescript --no-save
+        npm install
+      env:
+        workerCount: 3
+        timeout: 600000
+        

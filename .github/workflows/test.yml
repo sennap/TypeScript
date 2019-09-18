@@ -12,8 +12,7 @@ jobs:
     strategy:
       matrix:
         node-version: [8, 10]
-        strategy:
-          fail-fast: true
+      fail-fast: true
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}

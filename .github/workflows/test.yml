@@ -1,10 +1,10 @@
 name: Node CI from travis.yml
 
-on: 
-  push:
-    branches:
-      - master
-      - /^release-.*/
+on: [push]
+#  push:
+#    branches:
+#      - master
+#      - /^release-.*/
 
 jobs:
   build:

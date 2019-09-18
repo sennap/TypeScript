@@ -1,8 +1,5 @@
 name: Node CI from travis.yml
 
-# the below will run on any PR
-#on: [push]
-# the below only runs when merging to the specified branches 
 on:
   pull_request:
     branches:    

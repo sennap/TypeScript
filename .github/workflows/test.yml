@@ -1,13 +1,13 @@
 name: Node CI from travis.yml
 
 # the below will run on any PR
-on: [push]
+#on: [push]
 # the below only runs when merging to the specified branches 
-# on:
-# push:
-#    branches:    
-#      - master         # Push events on master branch
-#      - 'release/*'   # Push events to branches matching refs/heads/releases/*
+on:
+  pull_request:
+    branches:    
+      - master         # Push events on master branch
+      - 'release/*'   # Push events to branches matching refs/heads/releases/*
 
 jobs:
   build:

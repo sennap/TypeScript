@@ -1,4 +1,4 @@
-name: Node CI
+name: Node CI from travis.yml
 
 on: 
   push:
@@ -8,11 +8,11 @@ on:
 
 jobs:
   build:
+    
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [8, 10]
-      fail-fast: true
+        node-version: [8, 10]   
     steps:
     - uses: actions/checkout@v1
     - name: Use Node.js ${{ matrix.node-version }}

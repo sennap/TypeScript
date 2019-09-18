@@ -1,10 +1,10 @@
 name: Node CI from travis.yml
 
-on: [push]
-#  push:
-#    branches:
-#      - master
-#      - /^release-.*/
+on:
+ push:
+    branches:    
+      - master         # Push events on master branch
+      - 'release/*'   # Push events to branches matching refs/heads/releases/*
 
 jobs:
   build:
